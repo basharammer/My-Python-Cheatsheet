@@ -260,3 +260,91 @@ These work exactly the same as in C++/Java.
 == ➡️ Equal to (Checks equality)
 
 != ➡️ Not equal to
+
+13. The Modulo Operator (%) 🌓
+The Concept:
+The modulo operator divides two numbers and gives you the remainder. It does not give you the division result.
+
+Examples:
+
+6 % 2 ➡️ 0 (No remainder, divides perfectly)
+
+6 % 5 ➡️ 1 (5 goes into 6 once, remainder 1)
+
+6 % 4 ➡️ 2 (4 goes into 6 once, remainder 2)
+
+🧠 Mental Check: 10 % 3
+Question: What will print(10 % 3) output?
+Answer: 1
+(Because 3 goes into 10 three times [3x3=9], leaving 1 left over).
+
+14. The elif Statement (Multiple Conditions) 🔀
+The Scenario:
+Life isn't always binary (True/False). Sometimes you have 3+ options (e.g., A, B, C grades).
+
+The Syntax:
+
+if: The first check. Always starts the chain. 🥇
+
+elif: "Else If". Use this for subsequent checks. You can have as many as you want. 🥈
+
+else: The "Catch-All". Runs only if all previous conditions were False. 🗑️
+
+Code Structure:
+
+Python
+score = 85
+
+if score >= 90:
+    print("Grade: A") 🏆
+elif score >= 80:
+    print("Grade: B") 🥈 # This runs because 85 > 80
+elif score >= 70:
+    print("Grade: C") 🥉
+else:
+    print("Grade: F") 💀
+15. The "Mutually Exclusive" Rule 🔒
+Critical Logic:
+
+In an if / elif / else chain, only ONE block will run.
+
+Once a condition is met (True), Python skips the rest of the chain.
+
+Example: If you get an 'A', it won't check if you also got a 'B'.
+
+16. The "Independent if" Trap ⚠️
+The Difference:
+
+if / elif: "Pick One Option" (e.g., Grading).
+
+if / if: "Check All Options" (e.g., Pizza Toppings).
+
+Code Comparison:
+
+Scenario A: The Rollercoaster (Pick One Ticket) 🎟️
+
+Python
+height = 120
+
+if height > 180:
+    print("Too tall")
+elif height > 120:     # ✅ Only this runs
+    print("Can ride")
+else:
+    print("Too short")
+Scenario B: The Pizza Order (Add Many Toppings) 🍕
+
+Python
+pepperoni = True
+cheese = True
+
+if pepperoni:
+    bill += 2  # ✅ Runs
+if cheese:
+    bill += 1  # ✅ Runs (Independent check!)
+💡 Career Strategist Tip: "The Arrow of Destruction" 🏹
+Be careful with nesting! If you have an if inside an if inside an if... your code starts to look like an arrow shape >.
+
+Junior Dev: Nests 5 levels deep. 😵‍💫
+
+Senior Dev: Uses elif or "Guard Clauses" (returning early) to keep code flat and readable. 📜
