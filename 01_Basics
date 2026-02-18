@@ -1,1 +1,262 @@
+1. Input Function 📥
+Code: variable = input("Prompt message: ")
 
+Explanation: This function pauses the program ⏸️, displays the prompt 💬, and receives text input from the user ⌨️.
+
+Note: It always returns a String (str) 🧵. If you want a number, you must convert it (e.g., int(input(...))) 🔢.
+
+2. Scope & Indentation 📏
+Python does not use curly braces {} for code blocks 🚫.
+
+Instead, we use indentation (usually 4 spaces or 1 tab) to specify the scope 📑.
+
+3. Dynamic Typing 🎭
+There is no type specification when declaring variables. Python figures it out automatically 🧠.
+
+You can change the type of a variable at any time:
+
+Python
+name = 123            # Integer 🔢
+name = "Hello"        # Now it's a String 🧵
+4. Large Integers 🐘
+Code: 123_456_789
+
+Explanation: We use underscores _ instead of commas inside code to make large numbers readable 👀. Python ignores them when running 🏃‍♂️.
+
+Formatting Output: To print a number with commas for humans to read, use an f-string:
+
+Python
+number = 123456789
+print(f"{number:,}")  # Output: 123,456,789
+Explained More:
+
+The Problem: Large numbers like 1000000 are hard to read in the output 😵‍💫.
+
+The Solution: Use an f-string with a format specifier ✅.
+
+Code:
+
+Python
+large_number = 123456789
+print(f"{large_number:,}") 
+Output:
+123,456,789
+
+Explanation of Syntax:
+
+f"...": Tells Python this string contains code to run 🚀.
+
+{large_number}: The variable we want to print 📦.
+
+: (The Colon): Separation point. It tells Python, "Stop reading the variable name, start reading the formatting rule" 🛑➡️🎨.
+
+, (The Comma): The rule. It tells Python to "group the digits by thousands" using a comma 👯‍♂️.
+
+Other Common Rules:
+
+:_ ➡️ Uses underscores (e.g., 123_456_789)
+
+.2f ➡️ Rounds to 2 decimal places (e.g., 123.46) 🎯
+
+5. Data Types & Inspection 🕵️‍♂️
+The Problem: Python is Dynamically Typed (variables can change types) but Strongly Typed (types don't mix automatically). You need to know what you are working with to avoid errors 💥.
+
+Check Type: Use type(variable) to see the class of an object 🏷️.
+
+Python
+print(type("Hello"))  # Output: <class 'str'>
+print(type(123))      # Output: <class 'int'>
+Check Length: Use len(sequence) to count elements 📏.
+
+Works on: Strings (characters), Lists (items), Dictionaries (keys).
+
+Returns: Always an Integer.
+
+Python
+username = "CyberStudent"
+print(len(username))  # Output: 12
+
+6. Type Conversion (Casting) 🔄
+Since you cannot mathematically add a String to an Integer (e.g., "Score: " + 10 throws a TypeError 🚫), you must explicitly convert data types.
+
+1. str(x)
+
+Converts x to a String 🧵.
+
+Example: str(100) ➡️ "100"
+
+2. int(x)
+
+Converts x to an Integer 🔢.
+
+Example: int("50") ➡️ 50
+
+Note: Will fail if the string contains non-numbers (like "50abc") ❌.
+
+3. float(x)
+
+Converts x to a Float (decimal) 🌊.
+
+Example: float("12.5") ➡️ 12.5
+
+7. Division Operators ➗
+
+The Difference: Python has two types of division, and confusing them is a common bug 🐛.
+
+1. Float Division (/) 🌊
+Code: result = 10 / 2
+Output: 5.0
+Explanation: Always returns a Floating Point number, even if the result is a whole number.
+
+2. Floor Division (//) 📉
+Code: result = 10 // 3
+Output: 3
+Explanation: Divides the numbers and drops the decimal part (it does not round up). It returns an Integer 🔢.
+
+8. Multiplication & Exponents 🚀
+
+The Difference: The number of asterisks * changes the operation completely ⚠️.
+
+1. Multiplication (*) ✖️
+Code: 2 * 3
+Output: 6
+Explanation: Standard multiplication.
+
+2. Exponentiation (**) 📈
+Code: 2 ** 3
+Output: 8
+Explanation: This is "2 to the power of 3" ($2^3$).
+Note: Do NOT use ^ (caret) for power. In Python, ^ is the Bitwise XOR operator! 🚫
+
+9. Flooring vs. Rounding Numbers 📏
+The Problem: You have a float (e.g., 3.999) and you need it to be an integer. Do you want to cut it off or round it up? 🤔
+
+1. Truncating (Flooring with int()) ✂️
+
+Function: int(float_number)
+
+Behavior: It strictly removes all decimal places. It does not round up, even if the decimal is .99.
+
+Code:
+
+Python
+print(int(3.738492))  # Output: 3
+print(int(3.999999))  # Output: 3
+2. Rounding (Standard Math) 🔄
+
+Function: round(number, digits)
+
+Behavior: Rounds to the nearest whole number.
+
+.5 and up ➡️ Rounds Up ⬆️
+
+Below .5 ➡️ Rounds Down ⬇️
+
+Code:
+
+Python
+print(round(3.738492))    # Output: 4
+print(round(3.14159))     # Output: 3
+3. Rounding with Precision 🎯
+
+Usage: Add a second argument to specify how many decimal places you want to keep.
+
+Code:
+
+Python
+print(round(3.14159, 2))  # Output: 3.14
+💡 Career Strategist Tip: The "Negative" Trap ⚠️
+Be careful! int() simply chops off the decimal, moving towards zero. True mathematical flooring (like in data science) means "move to the lower number."
+
+int(-3.9) ➡️ -3 (Moves Up towards zero 📈)
+
+Real Floor: If you need strict mathematical flooring (where -3.9 becomes -4), you must use the math module:
+
+Python
+import math
+print(math.floor(-3.9))  # Output: -4
+
+10. Assignment Operators (The Shortcuts) ⏩
+The Concept:
+Just like in C++, these operators combine a math operation with an assignment. They are "Syntactic Sugar" to make your code cleaner and faster to write 🍬.
+
+Common Operators:
+
++= ➡️ Add and Assign (Increment)
+
+-= ➡️ Subtract and Assign (Decrement)
+
+*= ➡️ Multiply and Assign
+
+/= ➡️ Divide and Assign
+
+Code Example:
+
+Python
+score = 10
+score += 5   # Same as: score = score + 5
+print(score) # Output: 15
+
+score *= 2   # Same as: score = score * 2
+print(score) # Output: 30
+⚠️ The "C++ Trap": No ++ or --
+This is the most common mistake for C++/Java developers.
+
+In C++: i++; or ++i; works perfectly ✅.
+
+In Python: i++ causes a SyntaxError ❌.
+
+Why?
+Python treats ++ as two positive signs (math), not an operator.
+
+++5 is just + (+5), which is 5.
+
+It does not change the variable.
+
+The Fix:
+You must use += 1 to increment loops or counters.
+
+Python
+# ❌ The C++ Way (Crashing)
+count++ 
+
+# ✅ The Python Way (Working)
+count += 1
+
+11. Conditionals (Control Flow) 🔀
+The Syntax:
+Unlike C++, Python uses Colons (:) and Indentation (whitespace) to define blocks. No curly braces {} here! 🚫
+
+1. Basic if / else
+
+Rule 1: You must put a colon : at the end of the condition line.
+
+Rule 2: The code inside must be indented (usually 4 spaces).
+
+Python
+if 5 > 2:             # Parent line (Note the colon!) 
+    print("True!")    # Child line (Indented) 
+else:
+    print("False!")
+2. Indentation Hierarchy 📐
+
+Parent Line: Defines the block (ends with :).
+
+Child Line: Belongs to the parent (indented).
+
+Error: IndentationError happens if you mess up the spacing.
+
+12. Comparison Operators ⚖️
+These work exactly the same as in C++/Java.
+
+> ➡️ Greater than
+
+< ➡️ Less than
+
+>= ➡️ Greater than or equal to
+
+<= ➡️ Less than or equal to
+
+== ➡️ Equal to (Checks equality)
+
+!= ➡️ Not equal to
