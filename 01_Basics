@@ -139,3 +139,52 @@ Independent Ifs: if followed by another if checks both.
 Use elif to pick one option.
 
 Use multiple ifs to check all options.
+
+8. Modules in Python
+The Concept: Python allows you to split code into different files to keep things organized and "modular."
+
+The Code:
+
+Python
+# file: my_module.py
+pi = 3.14159
+
+# file: main.py
+import my_module
+print(my_module.pi) 🐍
+The Explanation: Any .py file can be imported. This allows you to reuse variables and functions across different parts of a project.
+
+💡 Pro Tip: This is the foundation of "Clean Code." Keep your files small and focused on one specific task (e.g., physics.py, database_logic.py).
+
+9. Random Numbers
+Python’s random module provides several ways to generate unpredictable data.
+
+A. Random Integers
+Range: Generates a whole number within a specific range.
+
+The Code:
+
+Python
+import random
+
+# Produces a random whole number between 1 and 10 (Inclusive)
+dice_roll = random.randint(1, 10) 🎲
+The Explanation: Unlike most Python range-based functions, randint(a, b) includes both a and b.
+
+B. Random Floats (Decimals)
+There are two primary ways to handle decimal randomness:
+
+random.random(): Generates a float from 0.0 up to (but not including) 1.0.
+
+Math: 0.0 <= x < 1.0 🌊
+
+Scaling: To get a random float between 0 and 5, multiply the result: random.random() * 5.
+
+random.uniform(a, b): Generates a float between two specific numbers.
+
+The Code:
+
+Python
+# Random float between 1.0 and 10.0
+result = random.uniform(1, 10) 🌊
+The Explanation: Use this when you need a decimal within a specific range without doing manual multiplication.
