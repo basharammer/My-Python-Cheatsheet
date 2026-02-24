@@ -277,6 +277,8 @@ for number in range(1, 101):
     total += number 
 The Explanation: range(a, b) generates numbers starting at a, but it stops before it hits b. Mathematically, this is expressed as a <= x < b. Also, range(1, 10) on its own doesn't output numbers—it creates a "range object." You must iterate over it with a loop to extract the integers.
 
- ⚠️ Junior Trap: Forgetting that the upper bound is exclusive. If you want to include the number 100 in your loop, you must set the upper bound to 101 (as seen in Example 2). If you use range(1, 100), it will stop at 99.
+⚠️ Junior Trap: Forgetting that the upper bound is exclusive. If you want to include the number 100 in your loop, you must set the upper bound to 101 (as seen in Example 2). If you use range(1, 100), it will stop at 99.
 
 💡 Career Strategist Tip: The range() function can actually take a third argument called the "step." If you want to generate only even numbers, you can jump by 2: range(2, 11, 2) will output 2, 4, 6, 8, 10.
+
+
